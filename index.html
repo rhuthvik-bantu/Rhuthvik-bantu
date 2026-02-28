@@ -1,0 +1,111 @@
+import React from "react"; import { motion } from "framer-motion"; import { Button } from "@/components/ui/button"; import { Card, CardContent } from "@/components/ui/card"; import { Input } from "@/components/ui/input"; import { Textarea } from "@/components/ui/textarea"; import { CheckCircle } from "lucide-react";
+
+export default function PremiumWebsite() { return ( <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white"> {/* Navbar */} <nav className="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto"> <h1 className="text-2xl font-bold tracking-wide">NovaX</h1> <div className="space-x-6 hidden md:block"> <a href="#features" className="hover:text-gray-300">Features</a> <a href="#services" className="hover:text-gray-300">Services</a> <a href="#pricing" className="hover:text-gray-300">Pricing</a> <a href="#contact" className="hover:text-gray-300">Contact</a> </div> <Button className="rounded-2xl">Get Started</Button> </nav>
+
+{/* Hero Section */}
+  <section className="text-center px-6 py-24 max-w-4xl mx-auto">
+    <motion.h2
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-5xl md:text-6xl font-extrabold leading-tight"
+    >
+      Build Your Digital Empire
+    </motion.h2>
+    <p className="mt-6 text-lg text-gray-400">
+      Premium website solutions designed to elevate your brand and convert visitors into loyal customers.
+    </p>
+    <div className="mt-10 flex justify-center gap-6">
+      <Button className="rounded-2xl px-8 py-6 text-lg">Start Project</Button>
+      <Button variant="outline" className="rounded-2xl px-8 py-6 text-lg border-white text-white">View Demo</Button>
+    </div>
+  </section>
+
+  {/* Features */}
+  <section id="features" className="px-6 py-20 max-w-7xl mx-auto">
+    <h3 className="text-4xl font-bold text-center mb-16">Why Choose Us</h3>
+    <div className="grid md:grid-cols-3 gap-10">
+      {[
+        "Lightning Fast Performance",
+        "SEO Optimized Structure",
+        "Mobile First Responsive",
+        "Modern UI/UX Design",
+        "Secure & Scalable",
+        "Easy Customization"
+      ].map((feature, index) => (
+        <Card key={index} className="bg-gray-800/50 backdrop-blur-xl border-none rounded-2xl shadow-2xl">
+          <CardContent className="p-8">
+            <CheckCircle className="mb-4" />
+            <h4 className="text-xl font-semibold">{feature}</h4>
+            <p className="text-gray-400 mt-2">We implement best practices to ensure outstanding results.</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  {/* Services */}
+  <section id="services" className="bg-gray-950 py-20 px-6">
+    <div className="max-w-7xl mx-auto text-center">
+      <h3 className="text-4xl font-bold mb-16">Our Services</h3>
+      <div className="grid md:grid-cols-3 gap-10">
+        {[
+          "Business Websites",
+          "E-Commerce Platforms",
+          "Portfolio & Personal Branding"
+        ].map((service, index) => (
+          <motion.div whileHover={{ scale: 1.05 }} key={index}>
+            <Card className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl border-none">
+              <CardContent className="p-10">
+                <h4 className="text-2xl font-bold">{service}</h4>
+                <p className="text-gray-400 mt-4">High converting and beautifully crafted digital experiences.</p>
+                <Button className="mt-6 rounded-2xl">Learn More</Button>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Pricing */}
+  <section id="pricing" className="px-6 py-20 max-w-7xl mx-auto">
+    <h3 className="text-4xl font-bold text-center mb-16">Pricing Plans</h3>
+    <div className="grid md:grid-cols-3 gap-10">
+      {[
+        { title: "Starter", price: "$299" },
+        { title: "Pro", price: "$699" },
+        { title: "Enterprise", price: "$1499" }
+      ].map((plan, index) => (
+        <Card key={index} className="bg-gray-800 rounded-2xl shadow-2xl border-none text-center">
+          <CardContent className="p-10">
+            <h4 className="text-2xl font-bold">{plan.title}</h4>
+            <p className="text-4xl font-extrabold my-6">{plan.price}</p>
+            <p className="text-gray-400">Complete premium website package.</p>
+            <Button className="mt-8 rounded-2xl w-full">Choose Plan</Button>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  {/* Contact */}
+  <section id="contact" className="bg-gray-950 py-20 px-6">
+    <div className="max-w-3xl mx-auto text-center">
+      <h3 className="text-4xl font-bold mb-10">Let’s Build Something Amazing</h3>
+      <div className="space-y-6">
+        <Input placeholder="Your Name" className="rounded-2xl bg-gray-800 border-none" />
+        <Input placeholder="Your Email" className="rounded-2xl bg-gray-800 border-none" />
+        <Textarea placeholder="Tell us about your project" className="rounded-2xl bg-gray-800 border-none" />
+        <Button className="w-full rounded-2xl py-6 text-lg">Send Message</Button>
+      </div>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer className="text-center py-8 border-t border-gray-800 mt-10">
+    <p className="text-gray-500">© 2026 NovaX. All rights reserved.</p>
+  </footer>
+</div>
+
+); }
