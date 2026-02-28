@@ -1,111 +1,95 @@
-import React from "react"; import { motion } from "framer-motion"; import { Button } from "@/components/ui/button"; import { Card, CardContent } from "@/components/ui/card"; import { Input } from "@/components/ui/input"; import { Textarea } from "@/components/ui/textarea"; import { CheckCircle } from "lucide-react";
-
-export default function PremiumWebsite() { return ( <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white"> {/* Navbar */} <nav className="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto"> <h1 className="text-2xl font-bold tracking-wide">NovaX</h1> <div className="space-x-6 hidden md:block"> <a href="#features" className="hover:text-gray-300">Features</a> <a href="#services" className="hover:text-gray-300">Services</a> <a href="#pricing" className="hover:text-gray-300">Pricing</a> <a href="#contact" className="hover:text-gray-300">Contact</a> </div> <Button className="rounded-2xl">Get Started</Button> </nav>
-
-{/* Hero Section */}
-  <section className="text-center px-6 py-24 max-w-4xl mx-auto">
-    <motion.h2
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="text-5xl md:text-6xl font-extrabold leading-tight"
-    >
-      Build Your Digital Empire
-    </motion.h2>
-    <p className="mt-6 text-lg text-gray-400">
-      Premium website solutions designed to elevate your brand and convert visitors into loyal customers.
-    </p>
-    <div className="mt-10 flex justify-center gap-6">
-      <Button className="rounded-2xl px-8 py-6 text-lg">Start Project</Button>
-      <Button variant="outline" className="rounded-2xl px-8 py-6 text-lg border-white text-white">View Demo</Button>
-    </div>
-  </section>
-
-  {/* Features */}
-  <section id="features" className="px-6 py-20 max-w-7xl mx-auto">
-    <h3 className="text-4xl font-bold text-center mb-16">Why Choose Us</h3>
-    <div className="grid md:grid-cols-3 gap-10">
-      {[
-        "Lightning Fast Performance",
-        "SEO Optimized Structure",
-        "Mobile First Responsive",
-        "Modern UI/UX Design",
-        "Secure & Scalable",
-        "Easy Customization"
-      ].map((feature, index) => (
-        <Card key={index} className="bg-gray-800/50 backdrop-blur-xl border-none rounded-2xl shadow-2xl">
-          <CardContent className="p-8">
-            <CheckCircle className="mb-4" />
-            <h4 className="text-xl font-semibold">{feature}</h4>
-            <p className="text-gray-400 mt-2">We implement best practices to ensure outstanding results.</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </section>
-
-  {/* Services */}
-  <section id="services" className="bg-gray-950 py-20 px-6">
-    <div className="max-w-7xl mx-auto text-center">
-      <h3 className="text-4xl font-bold mb-16">Our Services</h3>
-      <div className="grid md:grid-cols-3 gap-10">
-        {[
-          "Business Websites",
-          "E-Commerce Platforms",
-          "Portfolio & Personal Branding"
-        ].map((service, index) => (
-          <motion.div whileHover={{ scale: 1.05 }} key={index}>
-            <Card className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl border-none">
-              <CardContent className="p-10">
-                <h4 className="text-2xl font-bold">{service}</h4>
-                <p className="text-gray-400 mt-4">High converting and beautifully crafted digital experiences.</p>
-                <Button className="mt-6 rounded-2xl">Learn More</Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {/* Pricing */}
-  <section id="pricing" className="px-6 py-20 max-w-7xl mx-auto">
-    <h3 className="text-4xl font-bold text-center mb-16">Pricing Plans</h3>
-    <div className="grid md:grid-cols-3 gap-10">
-      {[
-        { title: "Starter", price: "$299" },
-        { title: "Pro", price: "$699" },
-        { title: "Enterprise", price: "$1499" }
-      ].map((plan, index) => (
-        <Card key={index} className="bg-gray-800 rounded-2xl shadow-2xl border-none text-center">
-          <CardContent className="p-10">
-            <h4 className="text-2xl font-bold">{plan.title}</h4>
-            <p className="text-4xl font-extrabold my-6">{plan.price}</p>
-            <p className="text-gray-400">Complete premium website package.</p>
-            <Button className="mt-8 rounded-2xl w-full">Choose Plan</Button>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </section>
-
-  {/* Contact */}
-  <section id="contact" className="bg-gray-950 py-20 px-6">
-    <div className="max-w-3xl mx-auto text-center">
-      <h3 className="text-4xl font-bold mb-10">Let’s Build Something Amazing</h3>
-      <div className="space-y-6">
-        <Input placeholder="Your Name" className="rounded-2xl bg-gray-800 border-none" />
-        <Input placeholder="Your Email" className="rounded-2xl bg-gray-800 border-none" />
-        <Textarea placeholder="Tell us about your project" className="rounded-2xl bg-gray-800 border-none" />
-        <Button className="w-full rounded-2xl py-6 text-lg">Send Message</Button>
-      </div>
-    </div>
-  </section>
-
-  {/* Footer */}
-  <footer className="text-center py-8 border-t border-gray-800 mt-10">
-    <p className="text-gray-500">© 2026 NovaX. All rights reserved.</p>
-  </footer>
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaX - Premium Digital Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:linear-gradient(135deg,#0f172a,#020617);color:white}
+nav{display:flex;justify-content:space-between;align-items:center;padding:25px 8%;position:sticky;top:0;background:rgba(0,0,0,0.4);backdrop-filter:blur(10px)}
+nav h1{font-size:28px;font-weight:800}
+nav a{color:white;text-decoration:none;margin:0 15px;font-weight:500}
+nav a:hover{color:#38bdf8}
+.btn{padding:12px 28px;border-radius:30px;border:none;cursor:pointer;font-weight:600;transition:0.3s}
+.primary{background:#38bdf8;color:black}
+.primary:hover{background:#0ea5e9}
+.outline{background:transparent;border:2px solid white;color:white}
+.hero{text-align:center;padding:120px 20px}
+.hero h2{font-size:60px;font-weight:800;margin-bottom:20px}
+.hero p{color:#cbd5e1;font-size:18px;margin-bottom:40px}
+.section{padding:100px 8%}
+.section h3{text-align:center;font-size:40px;margin-bottom:60px}
+.grid{display:grid;gap:30px}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:rgba(255,255,255,0.05);padding:40px;border-radius:20px;backdrop-filter:blur(15px);transition:0.3s}
+.card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.4)}
+.card h4{font-size:22px;margin-bottom:15px}
+.card p{color:#cbd5e1}
+.pricing .card{text-align:center}
+.price{font-size:40px;font-weight:800;margin:20px 0}
+.contact form{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+input,textarea{padding:15px;border-radius:12px;border:none;background:#1e293b;color:white}
+footer{text-align:center;padding:30px;border-top:1px solid #334155;color:#94a3b8}
+@media(max-width:768px){.hero h2{font-size:40px}}
+</style>
+</head>
+<body><nav>
+<h1>NovaX</h1>
+<div>
+<a href="#features">Features</a>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+<button class="btn primary">Get Started</button>
 </div>
-
-); }
+</nav><section class="hero">
+<h2>Build Your Digital Empire</h2>
+<p>Premium website solutions designed to elevate your brand and convert visitors into loyal customers.</p>
+<button class="btn primary">Start Project</button>
+<button class="btn outline">View Demo</button>
+</section><section id="features" class="section">
+<h3>Why Choose Us</h3>
+<div class="grid grid-3">
+<div class="card"><h4>Lightning Fast</h4><p>Optimized performance for maximum speed and engagement.</p></div>
+<div class="card"><h4>SEO Optimized</h4><p>Structured to rank higher on search engines.</p></div>
+<div class="card"><h4>Mobile Responsive</h4><p>Perfectly adaptable across all devices.</p></div>
+<div class="card"><h4>Modern UI/UX</h4><p>Premium interface with stunning visuals.</p></div>
+<div class="card"><h4>Secure & Scalable</h4><p>Built with best security practices.</p></div>
+<div class="card"><h4>Easy Customization</h4><p>Flexible design for future upgrades.</p></div>
+</div>
+</section><section id="services" class="section">
+<h3>Our Services</h3>
+<div class="grid grid-3">
+<div class="card"><h4>Business Websites</h4><p>Professional corporate presence that builds trust.</p></div>
+<div class="card"><h4>E-Commerce</h4><p>Sell your products with a premium shopping experience.</p></div>
+<div class="card"><h4>Portfolio Branding</h4><p>Showcase your talent in style.</p></div>
+</div>
+</section><section id="pricing" class="section pricing">
+<h3>Pricing Plans</h3>
+<div class="grid grid-3">
+<div class="card"><h4>Starter</h4><div class="price">₹9,999</div><p>Perfect for small businesses.</p><button class="btn primary">Choose Plan</button></div>
+<div class="card"><h4>Pro</h4><div class="price">₹24,999</div><p>Best for growing brands.</p><button class="btn primary">Choose Plan</button></div>
+<div class="card"><h4>Enterprise</h4><div class="price">₹59,999</div><p>Complete premium solution.</p><button class="btn primary">Choose Plan</button></div>
+</div>
+</section><section id="contact" class="section contact">
+<h3>Let’s Build Something Amazing</h3>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Tell us about your project"></textarea>
+<button class="btn primary">Send Message</button>
+</form>
+</section><footer>
+© 2026 NovaX. All rights reserved.
+</footer><script>
+document.querySelectorAll('a').forEach(anchor=>{
+anchor.addEventListener('click',function(e){
+if(this.getAttribute('href').startsWith('#')){
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+}
+});
+});
+</script></body>
+                                                                                                   </html>
